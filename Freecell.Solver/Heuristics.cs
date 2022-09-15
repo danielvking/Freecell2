@@ -18,7 +18,7 @@ namespace Freecell.Solver
     {
         /// <summary>
         /// This heuristic functions by counting cards which are stacked on smaller cards of the same suit.
-        /// It is admissible and consistent.
+        /// It is admissible and consistent. (i.e. A solution found using this heuristic is actually minimal.)
         /// </summary>
         /// <param name="board">The freecell board to analyze</param>
         /// <returns>The number of moves required to solve</returns>
@@ -86,6 +86,7 @@ namespace Freecell.Solver
 
         /// <summary>
         /// This heuristic takes the looser heuristic and weights it by 4, which seems to have better performance.
+        /// It is not admissible or consistent.
         /// </summary>
         /// <param name="board">The freecell board to analyze</param>
         /// <returns>The number of moves required to solve</returns>
@@ -96,7 +97,7 @@ namespace Freecell.Solver
 
         /// <summary>
         /// This heuristic functions by computing a minimal solution given infinite free space.
-        /// It is admissible and consistent.
+        /// It is admissible and consistent. (i.e. A solution found using this heuristic is actually minimal.)
         /// </summary>
         /// <param name="board">The freecell board to analyze</param>
         /// <returns>The number of moves required to solve</returns>

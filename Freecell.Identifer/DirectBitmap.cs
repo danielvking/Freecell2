@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace Freecell.Identifer
 {
+    /// <summary>
+    /// A more performant wrapper for Bitmap.
+    /// Credit to https://stackoverflow.com/a/34801225
+    /// </summary>
     public class DirectBitmap : IDisposable
     {
         public Bitmap Bitmap { get; }
