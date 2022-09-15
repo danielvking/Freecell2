@@ -43,11 +43,18 @@ namespace Freecell.Identifer
 
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
             Console.WriteLine("The program will now be looking for new freecell boards to play.");
             Console.WriteLine("You can take the mouse back from the program by moving it.");
             Console.WriteLine("To end the program, close this window or press any key.");
             MainTask();
             Console.ReadKey();
+        }
+
+        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            Console.WriteLine(e.ExceptionObject);
         }
 
         private static bool CardWouldAutoMove(FreecellBoard board, int homeColumn)
