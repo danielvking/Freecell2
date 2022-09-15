@@ -102,7 +102,7 @@ namespace Freecell.Identifer
 
                 if (fImg == null)
                 {
-                    if (CLOSE_ADS && !closeAdAttempted && DateTime.Now.Subtract(lastPlayed).Seconds > CLOSE_ADS_WAIT_SECONDS)
+                    if (CLOSE_ADS && !closeAdAttempted && DateTime.Now.Subtract(lastPlayed).TotalSeconds > CLOSE_ADS_WAIT_SECONDS)
                     {
                         // Click the X
                         Debug.WriteLine($"Closing ad");
